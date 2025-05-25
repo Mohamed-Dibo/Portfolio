@@ -6,13 +6,22 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
-  const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/Mohamed-Diab-Resume.pdf';
-    link.download = 'Mohamed-Diab-Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownloadResume = async () => {
+    try {
+      const response = await fetch('/Mohamed-Diab-Resume.pdf');
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Mohamed-Diab-Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading resume:', error);
+      alert('Error downloading resume. Please try again later.');
+    }
   };
 
   return (
