@@ -1,29 +1,11 @@
 import React from 'react';
-import { ArrowDown, Github as GitHub, Linkedin, Mail, FileText } from 'lucide-react';
+import { ArrowDown, Github as GitHub, Linkedin, Mail } from 'lucide-react';
 
 interface HeroSectionProps {
   isDarkMode: boolean;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
-  const handleDownloadResume = async () => {
-    try {
-      const response = await fetch('/Mohamed-Diab-Resume.pdf');
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'Mohamed-Diab-Resume.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Error downloading resume:', error);
-      alert('Error downloading resume. Please try again later.');
-    }
-  };
-
   return (
     <section 
       id="home" 
@@ -99,17 +81,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
                 <Mail size={18} />
                 Contact Me
               </a>
-              <button
-                onClick={handleDownloadResume}
-                className={`w-full sm:w-auto px-6 py-3 rounded-md font-medium transition-colors duration-200 flex items-center justify-center gap-2 ${
-                  isDarkMode 
-                    ? 'bg-gray-800 text-white hover:bg-gray-700' 
-                    : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
-                }`}
-              >
-                <FileText size={18} />
-                Download Resume
-              </button>
             </div>
             
             <div className="flex gap-5 justify-center sm:justify-start">
