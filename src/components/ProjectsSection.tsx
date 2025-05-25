@@ -26,7 +26,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ isDarkMode }) => {
       id: 1,
       title: 'Masasya',
       description: 'A comprehensive e-commerce platform specializing in modern kitchen solutions. Features include a responsive design, product catalog with kitchen designs, and seamless user experience.',
-      imageUrl: 'https://i.ibb.co/Qr0ZQXL/masasya.png',
+      imageUrl: './masasya.png',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Kitchen Design'],
       category: 'Web',
       liveUrl: 'https://masasya.com',
@@ -66,7 +66,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ isDarkMode }) => {
       id: 5,
       title: 'Image Gallery API',
       description: 'A robust REST API for managing and serving images with features like authentication, image upload, and categorization.',
-      imageUrl: 'https://images.pexels.com/photos/1266159/pexels-photo-1266159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      imageUrl: './products.png',
       technologies: ['Node.js', 'Express', 'MongoDB', 'JWT', 'Multer'],
       category: 'Web',
       githubUrl: 'https://github.com/Mohamed-Dibo/image-gallery-api'
