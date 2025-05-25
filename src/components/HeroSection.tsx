@@ -6,6 +6,15 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
+  const handleDownloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/Mohamed-Diab-Resume.pdf';
+    link.download = 'Mohamed-Diab-Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section 
       id="home" 
@@ -81,10 +90,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
                 <Mail size={18} />
                 Contact Me
               </a>
-              <a 
-                href="/Mohamed-Diab-Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={handleDownloadResume}
                 className={`w-full sm:w-auto px-6 py-3 rounded-md font-medium transition-colors duration-200 flex items-center justify-center gap-2 ${
                   isDarkMode 
                     ? 'bg-gray-800 text-white hover:bg-gray-700' 
@@ -92,8 +99,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
                 }`}
               >
                 <FileText size={18} />
-                View Resume
-              </a>
+                Download Resume
+              </button>
             </div>
             
             <div className="flex gap-5 justify-center sm:justify-start">
