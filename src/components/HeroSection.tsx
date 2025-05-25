@@ -9,7 +9,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
   return (
     <section 
       id="home" 
-      className={`min-h-screen flex items-center justify-center relative ${
+      className={`min-h-screen flex items-center justify-center relative overflow-x-hidden ${
         isDarkMode ? 'bg-gray-950 text-white' : 'bg-gray-50 text-gray-900'
       }`}
     >
@@ -31,7 +31,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
               Full Stack Developer | React & Node.js | Oracle APEX & PL/SQL | Building Scalable Web & ERP Systems
             </span>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Hi, I'm <span className="text-blue-500">Mohamed Diab</span>
               <div className="h-2"></div>
               <span className={`${isDarkMode ? 'text-gray-300' : 'text-gray-800'}`}>
@@ -39,7 +39,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
               </span>
             </h1>
             
-            <p className={`text-lg md:text-xl mb-8 max-w-2xl ${
+            <p className={`text-base md:text-xl mb-8 max-w-2xl ${
               isDarkMode ? 'text-gray-400' : 'text-gray-600'
             }`}>
               A highly motivated Full Stack Developer with expertise in Oracle database development. 
@@ -73,10 +73,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
               </div>
             </div>
             
-            <div className="flex flex-wrap gap-4 mb-12">
+            <div className="flex flex-wrap gap-4 mb-8 md:mb-12">
               <a 
                 href="#contact" 
-                className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-md font-medium transition-colors duration-200 flex items-center gap-2"
+                className="w-full sm:w-auto px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-md font-medium transition-colors duration-200 flex items-center justify-center gap-2"
               >
                 <Mail size={18} />
                 Contact Me
@@ -85,7 +85,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
                 href="/Mohamed-Diab-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`px-6 py-3 rounded-md font-medium transition-colors duration-200 flex items-center gap-2 ${
+                className={`w-full sm:w-auto px-6 py-3 rounded-md font-medium transition-colors duration-200 flex items-center justify-center gap-2 ${
                   isDarkMode 
                     ? 'bg-gray-800 text-white hover:bg-gray-700' 
                     : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
@@ -96,7 +96,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
               </a>
             </div>
             
-            <div className="flex gap-5">
+            <div className="flex gap-5 justify-center sm:justify-start">
               <a 
                 href="https://github.com/Mohamed-Dibo" 
                 target="_blank" 

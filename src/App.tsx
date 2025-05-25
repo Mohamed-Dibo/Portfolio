@@ -32,10 +32,8 @@ function App() {
   };
 
   useEffect(() => {
-    // Update document title with your name
-    document.title = 'Your Name | Portfolio';
+    document.title = 'Mohamed Diab | Portfolio';
     
-    // Add or remove dark mode class
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
@@ -44,7 +42,7 @@ function App() {
   }, [isDarkMode]);
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-950 text-white' : 'bg-white text-gray-900'}`}>
+    <div className={`min-h-screen w-screen overflow-x-hidden ${isDarkMode ? 'bg-gray-950 text-white' : 'bg-white text-gray-900'}`}>
       <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <HeroSection isDarkMode={isDarkMode} />
       <AboutSection isDarkMode={isDarkMode} />
